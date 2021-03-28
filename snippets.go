@@ -3,6 +3,7 @@ package snippets
 import (
 	"fmt"
 	"strconv"
+	"os"
 )
 
 func GetUserInputString(prompt string) string {
@@ -14,10 +15,10 @@ func GetUserInputString(prompt string) string {
 
 func GetUserInputNumber(prompt string) int32 {
     input := GetUserInputString(prompt)
-    i, err := strconv.Atoi(s)
+    i, err := strconv.Atoi(input)
     if err != nil {
         fmt.Println(err)
         os.Exit(1)
     }
-    return i
+    return int32(i)
 }
