@@ -13,12 +13,12 @@ func GetUserInputString(prompt string) string {
 	return input
 }
 
-func GetUserInputNumber(prompt string) int32 {
+func GetUserInputNumber(prompt string) int {
     input := GetUserInputString(prompt)
     i, err := strconv.Atoi(input)
     if err != nil {
         fmt.Println(err)
         os.Exit(1)
     }
-    return int32(i)
+    return int(i)
 }
